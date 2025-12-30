@@ -1,5 +1,8 @@
 # Lovable Desktop App
 
+![Build](https://github.com/sumitduster-iMac/Lovable/workflows/Build%20and%20Release/badge.svg)
+![CI](https://github.com/sumitduster-iMac/Lovable/workflows/CI/badge.svg)
+
 A beautiful native Intel Mac application for [Lovable.dev](https://lovable.dev/) with an enhanced, modern UI.
 
 ## Features
@@ -73,12 +76,30 @@ The app is built with:
 
 ```
 Lovable/
+├── .github/
+│   └── workflows/    # GitHub Actions CI/CD workflows
 ├── main.js           # Main Electron process
 ├── preload.js        # Preload script for security
 ├── index.html        # Main HTML file with enhanced UI
 ├── styles.css        # Modern CSS styles with animations
 ├── package.json      # Project configuration
 └── assets/           # App icons and resources
+```
+
+## CI/CD
+
+The project includes automated GitHub Actions workflows:
+
+- **Build and Release** - Automatically builds the app on pushes and creates releases when version tags are pushed
+- **CI** - Validates code quality, syntax, and project structure on every push and pull request
+
+See [.github/workflows/README.md](.github/workflows/README.md) for detailed workflow documentation.
+
+To create a release:
+```bash
+# Update version in package.json, then:
+git tag v1.0.1
+git push origin v1.0.1
 ```
 
 ## UI Enhancements

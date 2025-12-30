@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'copilot/**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate Code
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Check JavaScript syntax
+        run: |
+          node -c main.js
+          node -c preload.js
+          echo "✅ JavaScript files are valid"
+      
+      - name: Validate package.json
+        run: |
+          cat package.json | python3 -c "import sys, json; json.load(sys.stdin)"
+          echo "✅ package.json is valid"
+      
+      - name: Verify project structure
+        run: |
+          test -f main.js || exit 1
+          test -f preload.js || exit 1
+          test -f index.html || exit 1
+          test -f styles.css || exit 1
+          test -f package.json || exit 1
+          test -d assets || exit 1
+          echo "✅ All required files present"
+      
+      - name: Check HTML structure
+        run: |
+          grep -q '<webview' index.html || exit 1
+          grep -q 'loading-screen' index.html || exit 1
+          grep -q 'nav-bar' index.html || exit 1
+          grep -q 'status-bar' index.html || exit 1
+          echo "✅ HTML structure verified"
+      
+      - name: Check CSS features
+        run: |
+          grep -q '@keyframes' styles.css || exit 1
+          grep -q 'linear-gradient' styles.css || exit 1
+          grep -q 'backdrop-filter' styles.css || exit 1
+          echo "✅ CSS features verified"

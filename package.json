@@ -1,0 +1,43 @@
+{
+  "name": "lovable-mac-app",
+  "version": "1.0.0",
+  "description": "Intel Mac app for Lovable.dev",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --mac --x64",
+    "build-dmg": "electron-builder --mac --x64 --dmg"
+  },
+  "keywords": [
+    "lovable",
+    "electron",
+    "mac"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.lovable.app",
+    "productName": "Lovable",
+    "mac": {
+      "target": [
+        {
+          "target": "default",
+          "arch": "x64"
+        }
+      ],
+      "category": "public.app-category.developer-tools",
+      "icon": "assets/icon.png"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "assets/**/*"
+    ]
+  }
+}

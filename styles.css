@@ -103,64 +103,6 @@ webview {
   border: none;
 }
 
-/* Status Bar */
-.status-bar {
-  background: rgba(15, 23, 42, 0.95);
-  padding: 0.4rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-  color: #94A3B8;
-}
-
-/* Sponsor Section */
-.sponsor-section {
-  background: rgba(30, 41, 59, 0.8);
-  padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-  color: #94A3B8;
-}
-
-.sponsor-section a {
-  color: #3B82F6;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.sponsor-section a:hover {
-  color: #60A5FA;
-}
-
-.sponsor-heart {
-  color: #EC4899;
-}
-
-.status-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.status-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #10B981;
-}
-
-.status-text {
-  font-weight: 500;
-}
-
-.status-version {
-  opacity: 0.7;
-}
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;

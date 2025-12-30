@@ -98,19 +98,20 @@ The enhanced design maintains the original "Tahoe" geometric diamond/mountain ae
 ### icon.svg
 - **Size:** 512x512 viewBox
 - **Format:** SVG 1.1
-- **Animations:** CSS-based opacity animations
+- **Animations:** SMIL-based opacity animations (subtle and non-motion)
 - **Compatibility:** All modern browsers and SVG renderers
+- **Note:** PNG generation was done manually using Sharp; consider adding to build process
 
 ### icon.png
 - **Size:** 256x256 pixels
 - **Format:** PNG with transparency
 - **Color Depth:** 32-bit RGBA
-- **Generated From:** icon.svg using Sharp image processing library
+- **Generated From:** icon.svg using Sharp image processing library (manual conversion)
 
 ### heart-icon.svg
 - **Size:** 256x256 viewBox
 - **Format:** SVG 1.1
-- **Animations:** CSS-based opacity animations
+- **Animations:** SMIL-based opacity animations (subtle and non-motion)
 - **Purpose:** Standalone heart asset for future use
 
 ## Testing
@@ -122,12 +123,26 @@ The enhanced icons have been tested for:
 - ✅ SVG animation smoothness
 - ✅ Brand consistency with existing UI
 
+## Accessibility Considerations
+
+The SVG icons include subtle opacity animations for visual interest. These animations are:
+- Very subtle (opacity changes only, no motion)
+- Slow duration (2-3 seconds)
+- Non-distracting
+
+**Note:** For full accessibility compliance with motion sensitivity preferences, consider:
+- Creating static versions of icons for contexts where animations should be avoided
+- Implementing CSS-based animations with `@media (prefers-reduced-motion: reduce)` support
+- The current SMIL animations cannot be disabled via CSS media queries
+
 ## Future Recommendations
 
 1. **Icon Variants:** Consider creating size-optimized variants for small contexts (16x16, 32x32)
 2. **Dark/Light Modes:** The current design works well on dark backgrounds; may need adjustment for light backgrounds
 3. **Animated Version:** The SVG includes subtle animations; consider more prominent animations for special occasions
 4. **Favicon:** Create a favicon version (16x16) with simplified geometry for browser tabs
+5. **Accessibility:** Create static versions without animations for users with motion sensitivity
+6. **Build Process:** Document or automate PNG generation from SVG in the build pipeline
 
 ## Credits
 

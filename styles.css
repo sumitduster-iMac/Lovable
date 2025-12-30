@@ -102,7 +102,6 @@ body {
   /* Glassmorphism effect - macOS specific, fallback to solid background */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
   padding: 0.75rem 1rem;
   -webkit-app-region: drag;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -131,7 +130,7 @@ body {
 
 .nav-button {
   background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: none;
   border-radius: 8px;
   padding: 0.5rem;
   color: #E2E8F0;
@@ -144,7 +143,6 @@ body {
 
 .nav-button:hover {
   background: rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.4);
   transform: translateY(-1px);
 }
 
@@ -164,7 +162,7 @@ body {
 
 .url-display {
   background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border: none;
   border-radius: 12px;
   padding: 0.6rem 1.5rem;
   display: flex;
@@ -200,7 +198,6 @@ webview {
   /* Glassmorphism effect - macOS specific, fallback to solid background */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(139, 92, 246, 0.1);
   padding: 0.4rem 1rem;
   display: flex;
   justify-content: space-between;

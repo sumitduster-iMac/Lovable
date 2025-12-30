@@ -33,7 +33,6 @@
         }
       ],
       "category": "public.app-category.developer-tools",
-      "icon": "assets/icon.png",
       "identity": null
     },
     "files": [

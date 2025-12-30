@@ -37,7 +37,7 @@ When you first launch the app, you'll see:
 
 1. **Loading Screen** (2 seconds)
    - Animated Lovable logo
-   - Purple-pink gradient design
+   - Blue-pink gradient design
    - "Initializing your creative workspace..." message
 
 2. **Main Application Window**
@@ -145,7 +145,7 @@ minHeight: 600
 #### Changing Colors
 Edit `styles.css` and modify the color variables. Main colors:
 - Background: `#0F172A` and `#1E293B`
-- Accent: `#8B5CF6` and `#EC4899`
+- Accent: `#3B82F6` and `#EC4899`
 
 #### Changing Loading Time
 Edit `index.html` and modify this value:

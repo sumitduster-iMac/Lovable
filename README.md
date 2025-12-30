@@ -108,7 +108,7 @@ The app includes several UI enhancements over a basic web wrapper:
 
 1. **Custom Loading Screen** - Animated logo with gradient effects and loading spinner
 2. **Navigation Bar** - Integrated controls for navigation with modern styling
-3. **Gradient Theme** - Purple to pink gradient matching Lovable's brand
+3. **Gradient Theme** - Blue to pink gradient with modern styling
 4. **Smooth Animations** - Fade-ins, pulses, and transitions throughout
 5. **Status Bar** - Real-time connection status indicator
 6. **Glassmorphism Effects** - Frosted glass effects on navigation elements

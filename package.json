@@ -30,7 +30,8 @@
         }
       ],
       "category": "public.app-category.developer-tools",
-      "icon": "assets/icon.png"
+      "icon": "assets/icon.png",
+      "identity": null
     },
     "files": [
       "main.js",

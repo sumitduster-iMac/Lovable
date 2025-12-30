@@ -19,12 +19,33 @@
             <defs>
               <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
                 <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
               </linearGradient>
+              <linearGradient id="logoGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#F472B6;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#FB7185;stop-opacity:1" />
+              </linearGradient>
             </defs>
-            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" opacity="0.2"/>
-            <path d="M50 20 L65 40 L50 35 L35 40 Z" fill="url(#logoGradient)"/>
-            <path d="M50 35 L65 55 L50 80 L35 55 Z" fill="url(#logoGradient)"/>
+            <circle cx="50" cy="50" r="48" fill="url(#logoGradient)" opacity="0.15"/>
+            <circle cx="50" cy="50" r="43" fill="none" stroke="url(#logoGradient)" stroke-width="0.6" opacity="0.4"/>
+            <path d="M50 17 L68 42 L50 35 L32 42 Z" fill="url(#logoGradient)" opacity="0.95"/>
+            <path d="M50 35 L68 62 L50 86 L32 62 Z" fill="url(#logoGradient2)" opacity="0.95"/>
+            <!-- Heart icon -->
+            <g transform="translate(50, 53)">
+              <path d="M0,-4.9 C-1.6,-6.9 -4.9,-6.9 -6.9,-4.9 C-8.8,-2.9 -8.8,0 -6.9,2 L0,7.8 L6.9,2 C8.8,0 8.8,-2.9 6.9,-4.9 C4.9,-6.9 1.6,-6.9 0,-4.9 Z" 
+                    fill="url(#heartGradient)" 
+                    opacity="0.9"
+                    stroke="#FFFFFF" 
+                    stroke-width="0.5"
+                    stroke-opacity="0.6"/>
+            </g>
+            <circle cx="39" cy="29" r="0.6" fill="#FFFFFF" opacity="0.7"/>
+            <circle cx="61" cy="35" r="0.5" fill="#FFFFFF" opacity="0.7"/>
           </svg>
         </div>
         <h1 class="loading-title">Lovable</h1>

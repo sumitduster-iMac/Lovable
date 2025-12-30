@@ -41,6 +41,22 @@
     <nav class="nav-bar">
       <div class="nav-content">
         <div class="nav-left">
+          <svg class="nav-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:rgb(139,92,246);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(236,72,153);stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="navGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:rgb(236,72,153);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(251,113,133);stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <circle cx="256" cy="256" r="240" fill="url(#navGrad)" opacity="0.2"/>
+            <path d="M256 100 L340 220 L256 190 L172 220 Z" fill="url(#navGrad)"/>
+            <path d="M256 190 L340 310 L256 420 L172 310 Z" fill="url(#navGrad2)"/>
+            <circle cx="256" cy="256" r="200" fill="none" stroke="url(#navGrad)" stroke-width="4" opacity="0.5"/>
+          </svg>
           <button class="nav-button" id="backBtn" title="Go back">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M19 12H5M12 19l-7-7 7-7"/>
@@ -85,6 +101,13 @@
         allowpopups
         partition="persist:lovable"
       ></webview>
+    </div>
+
+    <!-- Sponsor Section -->
+    <div class="sponsor-section">
+      <span>Made with <span class="sponsor-heart">♥</span> by the community</span>
+      <span>•</span>
+      <a href="https://lovable.dev" target="_blank">Powered by Lovable</a>
     </div>
 
     <!-- Status Bar -->

@@ -105,6 +105,8 @@ body {
   padding: 0.75rem 1rem;
   -webkit-app-region: drag;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid;
+  border-image: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%) 1;
 }
 
 .nav-content {
@@ -118,7 +120,15 @@ body {
 .nav-right {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
   -webkit-app-region: no-drag;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .nav-center {
@@ -204,6 +214,35 @@ webview {
   align-items: center;
   font-size: 0.8rem;
   color: #94A3B8;
+}
+
+/* Sponsor Section */
+.sponsor-section {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #94A3B8;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.sponsor-section a {
+  color: #8B5CF6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sponsor-section a:hover {
+  color: #EC4899;
+}
+
+.sponsor-heart {
+  color: #EC4899;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .status-left {

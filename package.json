@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --mac --x64",
-    "build-dmg": "electron-builder --mac --x64 --dmg"
+    "build-dmg": "electron-builder --mac --x64"
   },
   "keywords": [
     "lovable",
@@ -25,12 +25,12 @@
     "mac": {
       "target": [
         {
-          "target": "default",
+          "target": "dmg",
           "arch": "x64"
         }
       ],
       "category": "public.app-category.developer-tools",
-      "icon": "assets/icon.png"
+      "identity": null
     },
     "files": [
       "main.js",

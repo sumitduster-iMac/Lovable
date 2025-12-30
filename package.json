@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --mac --x64 --dmg",
-    "build-dmg": "electron-builder --mac --x64 --dmg"
+    "build": "electron-builder --mac --x64",
+    "build-dmg": "electron-builder --mac --x64"
   },
   "keywords": [
     "lovable",

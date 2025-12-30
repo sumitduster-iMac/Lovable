@@ -41,7 +41,6 @@ body {
 
 .loading-content {
   text-align: center;
-  animation: fadeInUp 0.8s ease;
 }
 
 .logo-container {
@@ -53,18 +52,13 @@ body {
 .logo-icon {
   width: 80px;
   height: 80px;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 .loading-title {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E2E8F0;
   margin-bottom: 2rem;
-  animation: shimmer 3s ease-in-out infinite;
 }
 
 .loading-spinner {
@@ -78,16 +72,15 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
-  animation: bounce 1.4s ease-in-out infinite;
+  background: #3B82F6;
 }
 
 .spinner-dot:nth-child(2) {
-  animation-delay: 0.2s;
+  background: #60A5FA;
 }
 
 .spinner-dot:nth-child(3) {
-  animation-delay: 0.4s;
+  background: #EC4899;
 }
 
 .loading-text {
@@ -99,14 +92,8 @@ body {
 /* Navigation Bar */
 .nav-bar {
   background: rgba(15, 23, 42, 0.95);
-  /* Glassmorphism effect - macOS specific, fallback to solid background */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   padding: 0.75rem 1rem;
   -webkit-app-region: drag;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid;
-  border-image: linear-gradient(90deg, #3B82F6 0%, #60A5FA 50%, #EC4899 100%) 1;
 }
 
 .nav-content {
@@ -128,7 +115,6 @@ body {
   width: 32px;
   height: 32px;
   margin-right: 0.5rem;
-  animation: pulse 2s ease-in-out infinite;
 }
 
 .nav-center {
@@ -139,25 +125,23 @@ body {
 }
 
 .nav-button {
-  background: rgba(59, 130, 246, 0.1);
+  background: transparent;
   border: none;
   border-radius: 8px;
   padding: 0.5rem;
   color: #E2E8F0;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-button:hover {
-  background: rgba(59, 130, 246, 0.2);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-button:active {
-  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-button:disabled {
@@ -166,8 +150,7 @@ body {
 }
 
 .nav-button:disabled:hover {
-  transform: none;
-  background: rgba(59, 130, 246, 0.1);
+  background: transparent;
 }
 
 .url-display {
@@ -181,7 +164,6 @@ body {
   color: #E2E8F0;
   font-size: 0.9rem;
   min-width: 300px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .url-display svg {
@@ -205,9 +187,6 @@ webview {
 /* Status Bar */
 .status-bar {
   background: rgba(15, 23, 42, 0.95);
-  /* Glassmorphism effect - macOS specific, fallback to solid background */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   padding: 0.4rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -226,23 +205,20 @@ webview {
   gap: 0.75rem;
   font-size: 0.85rem;
   color: #94A3B8;
-  border-top: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .sponsor-section a {
   color: #3B82F6;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .sponsor-section a:hover {
-  color: #EC4899;
+  color: #60A5FA;
 }
 
 .sponsor-heart {
   color: #EC4899;
-  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .status-left {
@@ -255,9 +231,7 @@ webview {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
-  animation: pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  background: #10B981;
 }
 
 .status-text {

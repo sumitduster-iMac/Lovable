@@ -15,6 +15,8 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
+      // Note: sandbox must be false to enable webviewTag
+      // The webview itself runs in its own sandboxed process
       sandbox: false,
       webviewTag: true
     },

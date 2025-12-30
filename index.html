@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSP: 'unsafe-inline' is needed for inline scripts in this local Electron app.
+       Since all content is loaded from local files and not user-generated, the security risk is minimal. -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://lovable.dev https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://lovable.dev https://*.lovable.dev; script-src 'self' 'unsafe-inline' https://lovable.dev https://*.lovable.dev; img-src 'self' https: data:; frame-src https://lovable.dev https://*.lovable.dev; connect-src https://lovable.dev https://*.lovable.dev wss: https:; font-src 'self' https: data:;">
   <title>Lovable</title>
   <link rel="stylesheet" href="styles.css">

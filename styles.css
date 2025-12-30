@@ -99,7 +99,9 @@ body {
 /* Navigation Bar */
 .nav-bar {
   background: rgba(15, 23, 42, 0.95);
+  /* Glassmorphism effect - macOS specific, fallback to solid background */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(139, 92, 246, 0.1);
   padding: 0.75rem 1rem;
   -webkit-app-region: drag;
@@ -195,7 +197,9 @@ webview {
 /* Status Bar */
 .status-bar {
   background: rgba(15, 23, 42, 0.95);
+  /* Glassmorphism effect - macOS specific, fallback to solid background */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(139, 92, 246, 0.1);
   padding: 0.4rem 1rem;
   display: flex;

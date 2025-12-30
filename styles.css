@@ -59,7 +59,7 @@ body {
 .loading-title {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -78,7 +78,7 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
   animation: bounce 1.4s ease-in-out infinite;
 }
 
@@ -106,7 +106,7 @@ body {
   -webkit-app-region: drag;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   border-top: 4px solid;
-  border-image: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%) 1;
+  border-image: linear-gradient(90deg, #3B82F6 0%, #60A5FA 50%, #EC4899 100%) 1;
 }
 
 .nav-content {
@@ -139,7 +139,7 @@ body {
 }
 
 .nav-button {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   border: none;
   border-radius: 8px;
   padding: 0.5rem;
@@ -152,7 +152,7 @@ body {
 }
 
 .nav-button:hover {
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(59, 130, 246, 0.2);
   transform: translateY(-1px);
 }
 
@@ -167,7 +167,7 @@ body {
 
 .nav-button:disabled:hover {
   transform: none;
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .url-display {
@@ -185,7 +185,7 @@ body {
 }
 
 .url-display svg {
-  color: #8B5CF6;
+  color: #3B82F6;
 }
 
 /* Frame Container */
@@ -226,11 +226,11 @@ webview {
   gap: 0.75rem;
   font-size: 0.85rem;
   color: #94A3B8;
-  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .sponsor-section a {
-  color: #8B5CF6;
+  color: #3B82F6;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -320,10 +320,10 @@ webview {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.5);
+  background: rgba(59, 130, 246, 0.5);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.7);
+  background: rgba(59, 130, 246, 0.7);
 }

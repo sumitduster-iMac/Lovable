@@ -26,8 +26,8 @@ The Lovable Desktop App has been designed with a beautiful, modern UI. Here's wh
 ```
 **Colors**: 
 - Background: Dark navy blue gradient (#0F172A → #1E293B)
-- Logo & Title: Purple to pink gradient (#8B5CF6 → #EC4899)
-- Loading dots: Animated with purple-pink gradient
+- Logo & Title: Blue to pink gradient (#3B82F6 → #EC4899)
+- Loading dots: Animated with blue-pink gradient
 - Text: Light gray (#94A3B8)
 
 ---
@@ -61,7 +61,7 @@ The Lovable Desktop App has been designed with a beautiful, modern UI. Here's wh
 ## 🎯 Key Visual Features
 
 ### Navigation Bar
-- **Style**: Semi-transparent dark background with purple accent
+- **Style**: Semi-transparent dark background with blue accent
 - **Effect**: Glassmorphism (frosted glass blur)
 - **Controls**:
   - ◄ Back button (hover: lifts and brightens)
@@ -87,13 +87,13 @@ The Lovable Desktop App has been designed with a beautiful, modern UI. Here's wh
 
 ### Primary Colors
 - **Background Gradient**: `#0F172A` → `#1E293B` (dark navy)
-- **Accent Gradient**: `#8B5CF6` → `#EC4899` (purple → pink)
+- **Accent Gradient**: `#3B82F6` → `#EC4899` (blue → pink)
 - **Text Primary**: `#E2E8F0` (light gray)
 - **Text Secondary**: `#94A3B8` (muted gray)
 
 ### Status Colors
 - **Connected**: `#10B981` → `#34D399` (green gradient)
-- **Border Accent**: `rgba(139, 92, 246, 0.2)` (transparent purple)
+- **Border Accent**: `rgba(59, 130, 246, 0.2)` (transparent blue)
 
 ### Interactive States
 - **Hover**: Brightened accent with subtle lift

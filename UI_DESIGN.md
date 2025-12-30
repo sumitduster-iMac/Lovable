@@ -5,7 +5,7 @@ The Lovable Desktop App features a modern, enhanced UI with the following compon
 
 ## Color Scheme
 - **Primary Background**: Dark navy gradient (#0F172A to #1E293B)
-- **Accent Colors**: Purple to Pink gradient (#8B5CF6 to #EC4899)
+- **Accent Colors**: Blue to Pink gradient (#3B82F6 to #EC4899)
 - **Text**: Light gray (#E2E8F0) with muted secondary text (#94A3B8)
 - **Status Indicator**: Green gradient (#10B981 to #34D399)
 
@@ -19,7 +19,7 @@ The Lovable Desktop App features a modern, enhanced UI with the following compon
   - Three-dot loading spinner with staggered animation
   - Shimmer effect on title text
   - Fades out after 2 seconds
-- **Colors**: Purple to pink gradient on dark background
+- **Colors**: Blue to pink gradient on dark background
 
 ### 2. Navigation Bar
 - **Location**: Top of window
@@ -31,7 +31,7 @@ The Lovable Desktop App features a modern, enhanced UI with the following compon
   - Central URL display with icon
   - Glassmorphism effect (frosted glass backdrop)
   - Hover animations on buttons
-- **Style**: Semi-transparent dark background with purple accent borders
+- **Style**: Semi-transparent dark background with blue accent borders
 
 ### 3. Main Content Area
 - **Location**: Center of window (fills available space)
@@ -107,7 +107,7 @@ The Lovable Desktop App features a modern, enhanced UI with the following compon
 ### Custom Scrollbars
 - Width: 8px
 - Track: Dark semi-transparent
-- Thumb: Purple accent with transparency
+- Thumb: Blue accent with transparency
 - Hover: Increased opacity
 
 ## Responsive Behavior

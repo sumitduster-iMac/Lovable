@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSP: 'unsafe-inline' is needed for inline scripts in this local Electron app.
+       Since all content is loaded from local files and not user-generated, the security risk is minimal. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://lovable.dev https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://lovable.dev https://*.lovable.dev; script-src 'self' 'unsafe-inline' https://lovable.dev https://*.lovable.dev; img-src 'self' https: data:; frame-src https://lovable.dev https://*.lovable.dev; connect-src https://lovable.dev https://*.lovable.dev wss: https:; font-src 'self' https: data:;">
+  <title>Lovable</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <div class="logo-container">
+          <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" opacity="0.2"/>
+            <path d="M50 20 L65 40 L50 35 L35 40 Z" fill="url(#logoGradient)"/>
+            <path d="M50 35 L65 55 L50 80 L35 55 Z" fill="url(#logoGradient)"/>
+          </svg>
+        </div>
+        <h1 class="loading-title">Lovable</h1>
+        <div class="loading-spinner">
+          <div class="spinner-dot"></div>
+          <div class="spinner-dot"></div>
+          <div class="spinner-dot"></div>
+        </div>
+        <p class="loading-text">Initializing your creative workspace...</p>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <div class="nav-content">
+        <div class="nav-left">
+          <button class="nav-button" id="backBtn" title="Go back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button class="nav-button" id="forwardBtn" title="Go forward">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="nav-button" id="refreshBtn" title="Refresh">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="nav-center">
+          <div class="url-display">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+            <span>lovable.dev</span>
+          </div>
+        </div>
+        <div class="nav-right">
+          <button class="nav-button" id="homeBtn" title="Home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- WebView Frame Container -->
+    <div class="frame-container">
+      <webview 
+        id="lovableWebview" 
+        src="https://lovable.dev/" 
+        allowpopups
+        partition="persist:lovable"
+      ></webview>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="status-left">
+        <span class="status-indicator"></span>
+        <span class="status-text">Connected</span>
+      </div>
+      <div class="status-right">
+        <span class="status-version">Lovable Desktop v1.0.0</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const loadingScreen = document.getElementById('loadingScreen');
+    const webview = document.getElementById('lovableWebview');
+    const backBtn = document.getElementById('backBtn');
+    const forwardBtn = document.getElementById('forwardBtn');
+    const refreshBtn = document.getElementById('refreshBtn');
+    const homeBtn = document.getElementById('homeBtn');
+
+    // Show loading screen initially
+    setTimeout(() => {
+      loadingScreen.classList.add('fade-out');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    }, 2000);
+
+    // Wait for webview to be ready
+    webview.addEventListener('dom-ready', () => {
+      console.log('Lovable webview loaded');
+    });
+
+    // Navigation controls
+    backBtn.addEventListener('click', () => {
+      if (webview.canGoBack()) {
+        webview.goBack();
+      }
+    });
+
+    forwardBtn.addEventListener('click', () => {
+      if (webview.canGoForward()) {
+        webview.goForward();
+      }
+    });
+
+    refreshBtn.addEventListener('click', () => {
+      webview.reload();
+    });
+
+    homeBtn.addEventListener('click', () => {
+      webview.loadURL('https://lovable.dev/');
+    });
+
+    // Update navigation button states
+    webview.addEventListener('did-navigate', () => {
+      backBtn.disabled = !webview.canGoBack();
+      forwardBtn.disabled = !webview.canGoForward();
+    });
+
+    webview.addEventListener('did-navigate-in-page', () => {
+      backBtn.disabled = !webview.canGoBack();
+      forwardBtn.disabled = !webview.canGoForward();
+    });
+  </script>
+</body>
+</html>

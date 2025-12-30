@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --mac --x64",
+    "build": "electron-builder --mac --x64 --dmg",
     "build-dmg": "electron-builder --mac --x64 --dmg"
   },
   "keywords": [
@@ -25,7 +25,7 @@
     "mac": {
       "target": [
         {
-          "target": "default",
+          "target": "dmg",
           "arch": "x64"
         }
       ],

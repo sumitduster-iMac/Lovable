@@ -59,10 +59,11 @@ body {
 .loading-title {
   font-size: 3rem;
   font-weight: 700;
+  color: #E2E8F0;
   background: linear-gradient(90deg, #3B82F6 0%, #EC4899 50%, #3B82F6 100%);
   background-size: 200% auto;
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
   animation: shimmer 3s linear infinite;

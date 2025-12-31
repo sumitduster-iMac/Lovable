@@ -4,6 +4,8 @@ const path = require('path');
 let mainWindow;
 
 function createWindow() {
+  const iconPath = path.join(__dirname, 'assets', 'icon.png');
+
   mainWindow = new BrowserWindow({
     width: 1400,
     height: 900,
@@ -11,6 +13,8 @@ function createWindow() {
     minHeight: 600,
     titleBarStyle: 'hiddenInset',
     backgroundColor: '#0F172A',
+    // Used on Windows/Linux; macOS uses the app bundle icon (and dock icon set below).
+    icon: iconPath,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -47,6 +51,19 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  // Ensure dock icon is correct in development builds on macOS.
+  if (process.platform === 'darwin' && app.dock) {
+    const iconPath = path.join(__dirname, 'assets', 'icon.png');
+    try {
+      const maybePromise = app.dock.setIcon(iconPath);
+      if (maybePromise && typeof maybePromise.catch === 'function') {
+        maybePromise.catch(() => {});
+      }
+    } catch (_) {
+      // Ignore failures (e.g., missing icon in some dev setups).
+    }
+  }
+
   createWindow();
 
   app.on('activate', () => {

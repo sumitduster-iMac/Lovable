@@ -13,22 +13,6 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-      <div class="loading-content">
-        <div class="logo-container">
-          <img class="logo-icon" src="assets/icon.svg" alt="Lovable icon" />
-        </div>
-        <h1 class="loading-title">Lovable</h1>
-        <div class="loading-spinner">
-          <div class="spinner-dot"></div>
-          <div class="spinner-dot"></div>
-          <div class="spinner-dot"></div>
-        </div>
-        <p class="loading-text">Initializing your creative workspace...</p>
-      </div>
-    </div>
-
     <!-- WebView Frame Container -->
     <div class="frame-container">
       <webview 
@@ -41,16 +25,7 @@
   </div>
 
   <script>
-    const loadingScreen = document.getElementById('loadingScreen');
     const webview = document.getElementById('lovableWebview');
-
-    // Show loading screen initially
-    setTimeout(() => {
-      loadingScreen.classList.add('fade-out');
-      setTimeout(() => {
-        loadingScreen.style.display = 'none';
-      }, 500);
-    }, 2000);
 
     // Wait for webview to be ready
     webview.addEventListener('dom-ready', () => {

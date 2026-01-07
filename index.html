@@ -12,6 +12,22 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Loading Screen with Centered App Icon -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <div class="app-icon-container">
+        <img src="assets/icon.svg" alt="Lovable App Icon" class="app-icon">
+      </div>
+      <h1 class="app-title">Lovable</h1>
+      <div class="loading-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <p class="loading-text">Initializing your creative workspace...</p>
+    </div>
+  </div>
+
   <div class="app-container">
     <!-- WebView Frame Container -->
     <div class="frame-container">
@@ -25,7 +41,20 @@
   </div>
 
   <script>
+    // Loading screen timing constants
+    const LOADING_DISPLAY_DURATION = 2500; // ms - how long to show loading screen
+    const LOADING_FADE_DURATION = 500; // ms - fade out transition time (matches CSS)
+    
     const webview = document.getElementById('lovableWebview');
+    const loadingScreen = document.getElementById('loadingScreen');
+
+    // Hide loading screen after configured duration
+    setTimeout(() => {
+      loadingScreen.classList.add('fade-out');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, LOADING_FADE_DURATION);
+    }, LOADING_DISPLAY_DURATION);
 
     // Wait for webview to be ready
     webview.addEventListener('dom-ready', () => {

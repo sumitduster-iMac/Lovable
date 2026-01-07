@@ -304,7 +304,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ### Made with ❤️ for the Lovable community
 
-![App Icon](assets/icon.svg)
+![Lovable App Icon - Tahoe-style liquid glass heart with gradient](assets/icon.svg)
 
 **[⬆ Back to Top](#lovable-desktop-app)**
 

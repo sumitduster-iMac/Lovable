@@ -41,16 +41,20 @@
   </div>
 
   <script>
+    // Loading screen timing constants
+    const LOADING_DISPLAY_DURATION = 2500; // ms - how long to show loading screen
+    const LOADING_FADE_DURATION = 500; // ms - fade out transition time (matches CSS)
+    
     const webview = document.getElementById('lovableWebview');
     const loadingScreen = document.getElementById('loadingScreen');
 
-    // Hide loading screen after 2.5 seconds
+    // Hide loading screen after configured duration
     setTimeout(() => {
       loadingScreen.classList.add('fade-out');
       setTimeout(() => {
         loadingScreen.style.display = 'none';
-      }, 500);
-    }, 2500);
+      }, LOADING_FADE_DURATION);
+    }, LOADING_DISPLAY_DURATION);
 
     // Wait for webview to be ready
     webview.addEventListener('dom-ready', () => {

@@ -41,7 +41,7 @@
       C412 400 370 430 324 456
       C306 466 282 478 256 488
       C230 478 206 466 184 456
-      L256 456 Z"
+      Z"
       fill="url(#mainGradient)"
       stroke="#FFFFFF"
       stroke-width="10"

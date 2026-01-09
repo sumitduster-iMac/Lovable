@@ -194,7 +194,7 @@ Lovable/
 
 - **`index.html`**: Contains the loading screen with centered app icon and webview
 - **`styles.css`**: All styling including loading screen animations
-- **`assets/icon.svg`**: Beautiful gradient app icon (Tahoe-style liquid glass design)
+- **`assets/icon.svg`**: Beautiful gradient app icon with heart design
 - **`main.js`**: Electron main process configuration
 
 ---
@@ -294,7 +294,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 🌟 Acknowledgments
 
-- **App Icon**: Beautiful Tahoe-style liquid glass heart design with gradient
+- **App Icon**: Beautiful gradient heart design (orange to pink to purple)
 - **Lovable.dev**: The amazing platform this app connects to
 - **Electron**: Making cross-platform desktop apps possible
 
@@ -304,7 +304,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ### Made with ❤️ for the Lovable community
 
-![Lovable App Icon - Tahoe-style liquid glass heart with gradient](assets/icon.svg)
+![Lovable App Icon - Gradient heart with white border](assets/icon.svg)
 
 **[⬆ Back to Top](#lovable-desktop-app)**
 

@@ -1,146 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lovable Tahoe liquid glass icon">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lovable App Icon">
   <defs>
-    <!-- Tahoe-like multicolor gradient -->
-    <linearGradient id="tahoeGradient" x1="20%" y1="5%" x2="85%" y2="95%">
-      <stop offset="0%" stop-color="#FF8A00"/>
-      <stop offset="38%" stop-color="#FF2D95"/>
-      <stop offset="100%" stop-color="#4A7DFF"/>
+    <!-- Main gradient: orange/peach -> pink -> purple (matching the provided image) -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD4A8"/>
+      <stop offset="25%" stop-color="#FFB088"/>
+      <stop offset="40%" stop-color="#FF8866"/>
+      <stop offset="55%" stop-color="#FF6699"/>
+      <stop offset="70%" stop-color="#E066CC"/>
+      <stop offset="85%" stop-color="#AA66DD"/>
+      <stop offset="100%" stop-color="#8866DD"/>
     </linearGradient>
-
-    <!-- Warm glow in the upper-left lobe -->
-    <radialGradient id="warmGlow" cx="30%" cy="18%" r="60%">
-      <stop offset="0%" stop-color="#FFD36B" stop-opacity="0.95"/>
-      <stop offset="45%" stop-color="#FF8A00" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#FF8A00" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Subtle cool lift in the bottom-left -->
-    <radialGradient id="coolLift" cx="25%" cy="88%" r="70%">
-      <stop offset="0%" stop-color="#7BC7FF" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#4A7DFF" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Liquid-glass highlight -->
-    <linearGradient id="glassHighlight" x1="10%" y1="10%" x2="70%" y2="70%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
-      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Slight rim light -->
-    <linearGradient id="rimLight" x1="0%" y1="20%" x2="100%" y2="80%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.30"/>
-    </linearGradient>
-
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+    
+    <!-- Soft shadow filter -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feOffset dx="0" dy="12" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-
-    <filter id="innerShade" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
-      <feOffset dx="0" dy="10" result="offset"/>
-      <feComposite in="offset" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="inner"/>
-      <feColorMatrix in="inner" type="matrix"
-        values="0 0 0 0 0
-                0 0 0 0 0
-                0 0 0 0 0
-                0 0 0 0.55 0" result="innerDark"/>
-      <feComposite in="innerDark" in2="SourceGraphic" operator="over"/>
-    </filter>
-
-    <clipPath id="heartClip">
-      <path id="heartPath" d="M256 468
-        C206 438 160 404 129 368
-        C98 333 80 294 80 248
-        C80 182 126 136 192 136
-        C221 136 248 147 269 167
-        C277 175 285 184 292 194
-        C299 184 307 175 315 167
-        C336 147 363 136 392 136
-        C458 136 504 182 504 248
-        C504 294 486 333 455 368
-        C424 404 378 438 328 468
-        C309 479 283 492 256 504
-        C229 492 203 479 256 468 Z"/>
-    </clipPath>
   </defs>
   
-  <!-- Main Tahoe heart -->
   <g filter="url(#softShadow)">
-    <path d="M256 468
-      C206 438 160 404 129 368
-      C98 333 80 294 80 248
-      C80 182 126 136 192 136
-      C221 136 248 147 269 167
-      C277 175 285 184 292 194
-      C299 184 307 175 315 167
-      C336 147 363 136 392 136
-      C458 136 504 182 504 248
-      C504 294 486 333 455 368
-      C424 404 378 438 328 468
-      C309 479 283 492 256 504
-      C229 492 203 479 256 468 Z"
-      fill="url(#tahoeGradient)"/>
-
-    <!-- Color volume -->
-    <g clip-path="url(#heartClip)">
-      <rect x="0" y="0" width="512" height="512" fill="url(#warmGlow)"/>
-      <rect x="0" y="0" width="512" height="512" fill="url(#coolLift)"/>
-    </g>
-
-    <!-- Rim light + inner shade for glass depth -->
-    <path d="M256 468
-      C206 438 160 404 129 368
-      C98 333 80 294 80 248
-      C80 182 126 136 192 136
-      C221 136 248 147 269 167
-      C277 175 285 184 292 194
-      C299 184 307 175 315 167
-      C336 147 363 136 392 136
-      C458 136 504 182 504 248
-      C504 294 486 333 455 368
-      C424 404 378 438 328 468
-      C309 479 283 492 256 504
-      C229 492 203 479 256 468 Z"
-      fill="none" stroke="url(#rimLight)" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
-
-    <g filter="url(#innerShade)" opacity="0.9">
-      <path d="M256 468
-        C206 438 160 404 129 368
-        C98 333 80 294 80 248
-        C80 182 126 136 192 136
-        C221 136 248 147 269 167
-        C277 175 285 184 292 194
-        C299 184 307 175 315 167
-        C336 147 363 136 392 136
-        C458 136 504 182 504 248
-        C504 294 486 333 455 368
-        C424 404 378 438 328 468
-        C309 479 283 492 256 504
-        C229 492 203 479 256 468 Z"
-        fill="transparent"/>
-    </g>
-
-    <!-- Glass highlight sweep -->
-    <g clip-path="url(#heartClip)">
-      <path d="M92 182
-        C140 146 198 130 252 134
-        C294 136 326 150 354 170
-        C324 176 297 191 276 217
-        C244 257 206 286 154 296
-        C120 302 93 296 80 286
-        C76 248 78 212 92 182 Z"
-        fill="url(#glassHighlight)" opacity="0.7"/>
-      <path d="M150 150
-        C192 132 238 126 278 132
-        C240 140 208 160 182 192
-        C170 208 158 225 142 236
-        C120 252 99 254 86 248
-        C92 210 112 176 150 150 Z"
-        fill="#FFFFFF" opacity="0.18"/>
-    </g>
+    <!-- Heart shape with rounded edges and white border -->
+    <path d="M256 456
+      C210 430 168 400 138 366
+      C108 332 92 294 92 250
+      C92 190 136 146 196 146
+      C223 146 248 156 268 174
+      C276 182 283 190 290 200
+      C297 190 304 182 312 174
+      C332 156 357 146 384 146
+      C444 146 488 190 488 250
+      C488 294 472 332 442 366
+      C412 400 370 430 324 456
+      C306 466 282 478 256 488
+      C230 478 206 466 256 456 Z"
+      fill="url(#mainGradient)"
+      stroke="#FFFFFF"
+      stroke-width="10"
+      stroke-linejoin="round"
+      stroke-linecap="round"/>
   </g>
 </svg>

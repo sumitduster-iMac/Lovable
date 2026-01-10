@@ -8,11 +8,11 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Version](https://img.shields.io/badge/version-1.0.0-orange)
 
-<img src="assets/icon.svg" alt="Lovable App Icon" width="200" height="200" />
+<img src="assets/icon.svg" alt="Lovable App Icon" width="250" height="250" />
 
 ### ✨ A beautiful native Intel Mac application for [Lovable.dev](https://lovable.dev/)
 
-*Experience lovable.dev with an enhanced, modern UI featuring a stunning loading screen with a centered 200x200px animated app icon*
+*Experience lovable.dev with a clean, native desktop application built specifically for Mac*
 
 </div>
 
@@ -23,78 +23,58 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <h3>🎨 Beautiful Loading Screen</h3>
-      Stunning loading screen with centered 200x200px app icon, smooth pulse animations, gradient effects, and animated loading dots
-    </td>
-    <td align="center" width="50%">
       <h3>🚀 Native macOS Experience</h3>
       Built specifically for Intel Mac computers with native integration and optimized performance
     </td>
-  </tr>
-  <tr>
-    <td align="center">
+    <td align="center" width="50%">
       <h3>🌐 Full Web Access</h3>
       Complete access to lovable.dev with all features, functionality, and seamless integration
     </td>
-    <td align="center">
-      <h3>⚡ Fast & Responsive</h3>
-      Optimized performance with Electron framework and hardware-accelerated animations
-    </td>
   </tr>
   <tr>
     <td align="center">
-      <h3>💫 Smooth Animations</h3>
-      Professional animations including icon pulse, title shimmer, staggered dot bounce, and smooth transitions
+      <h3>⚡ Fast & Responsive</h3>
+      Instant startup with optimized performance using the Electron framework
     </td>
     <td align="center">
       <h3>🔒 Secure</h3>
       Context isolation, sandboxed environment, and Content Security Policy for maximum security
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <h3>🎨 Beautiful Design</h3>
+      Clean, modern interface with a stunning Tahoe-style liquid glass heart icon
+    </td>
+    <td align="center">
+      <h3>💾 Persistent Sessions</h3>
+      Your work and sessions are saved automatically between app launches
+    </td>
+  </tr>
 </table>
 
 ---
 
-## ✨ App Icon Showcase
+## ✨ App Icon
 
 <div align="center">
-  <img src="assets/icon.svg" alt="Lovable App Icon - Centered Display" width="250" height="250" />
+  <img src="assets/icon.svg" alt="Lovable App Icon" width="300" height="300" />
   
   **Beautiful Tahoe-style liquid glass heart design with gradient**
   
-  *This icon appears prominently centered on the loading screen with smooth pulse animations*
+  *This stunning icon represents the Lovable brand with its modern, clean aesthetic*
 </div>
 
 ---
 
-## 🖼️ Screenshots
+## 🖼️ Application Window
 
-### Loading Screen with Centered App Icon
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/d86a080e-112c-4908-b002-9b1098fcc2eb" alt="Lovable Loading Screen with Centered Icon" width="800" />
-</div>
-
-<br>
-
-The app features a beautiful, professional loading screen that appears on launch:
-- **Large Centered Icon**: 200x200px app icon prominently centered with pink glow
-- **Stunning Gradient Background**: Dark navy to slate gradient (#0F172A to #1E293B)
-- **Multiple Smooth Animations**: 
-  - Icon pulse effect (2s cycle: scale 1.0 → 1.05 and opacity 1.0 → 0.9)
-  - Title shimmer effect (3s cycle)
-  - Animated loading dots with staggered bounce (1.4s cycle with 0.2s delays)
-  - Fade-in entrance animation (0.8s)
-  - Fade-out exit animation (0.5s)
-- **Duration**: 2.5 seconds display + 0.5s fade-out = 3 seconds total
-- **Message**: "Initializing your creative workspace..."
-
-### Main Application Window
-- Clean, minimal interface with no unnecessary chrome
-- Full-featured webview displaying lovable.dev
-- Seamless integration with the Lovable platform
-- Native macOS window controls and behavior
-- Persistent session state across app launches
+The app provides a clean, minimal interface:
+- **Instant Launch**: Opens directly to lovable.dev without delays
+- **Full-Featured Webview**: Complete access to all Lovable platform features
+- **Seamless Integration**: Native macOS window controls and behavior
+- **Persistent Sessions**: Your work is automatically saved across app launches
+- **Clean Interface**: No unnecessary chrome, just the tools you need
 
 ---
 
@@ -114,7 +94,7 @@ npm install
 npm start
 ```
 
-That's it! The app will open with a beautiful loading screen featuring the centered app icon, then load lovable.dev.
+That's it! The app will launch instantly and open lovable.dev.
 
 ---
 
@@ -155,8 +135,7 @@ npm start
 The app will:
 1. Generate required icons from SVG source
 2. Launch the Electron application
-3. Display the loading screen with centered app icon
-4. Load lovable.dev in the webview
+3. Open lovable.dev instantly in the webview
 
 ---
 
@@ -210,15 +189,15 @@ Lovable/
 │   └── generate-icons.mjs # Icon generation utility
 ├── main.js               # Main Electron process
 ├── preload.js            # Preload script for security
-├── index.html            # Main HTML with loading screen
-├── styles.css            # Modern CSS with animations
+├── index.html            # Main HTML with webview
+├── styles.css            # Application styling and theme
 └── package.json          # Project configuration
 ```
 
 ### Key Files
 
-- **`index.html`**: Contains the loading screen with centered app icon and webview
-- **`styles.css`**: All styling including loading screen animations
+- **`index.html`**: Main application HTML with webview container
+- **`styles.css`**: Application styling and theme
 - **`assets/icon.svg`**: Beautiful gradient app icon (Tahoe-style liquid glass design)
 - **`main.js`**: Electron main process configuration
 
@@ -240,68 +219,32 @@ git tag v1.0.1
 git push origin v1.0.1
 ```
 
-## 🎨 UI Enhancements
+## 🎨 Design & User Experience
 
-The app provides a premium desktop experience with professional UI enhancements:
+The app provides a premium desktop experience with a focus on performance and usability:
 
-### Loading Screen ⭐ Featured!
-- **Centered App Icon**: Large 200x200px icon prominently centered on screen
-- **Gradient Background**: Dark navy gradient (#0F172A to #1E293B) creating visual depth
-- **Icon Animations**: 
-  - Pulse effect with smooth scale (1.0 → 1.05) and opacity (1.0 → 0.9) transitions
-  - Pink gradient drop shadow (rgba(236, 72, 153, 0.3)) for depth
-- **Title Effects**: "Lovable" text with blue-to-pink gradient and shimmer animation
-- **Loading Indicator**: Three animated dots with staggered bounce effect (0s, 0.2s, 0.4s delays)
-- **Smooth Transitions**: 
-  - Fade-in entrance (0.8s)
-  - Fade-out exit (0.5s)
-- **Duration**: 2.5 seconds branded experience + 0.5s transition = 3s total
-- **Auto-dismiss**: Automatically transitions to main app after loading
+### Design Philosophy
+1. **Instant Startup** - Opens directly to lovable.dev for immediate productivity
+2. **Clean Interface** - Minimal chrome and distractions, maximum workspace
+3. **Beautiful Icon** - Tahoe-style liquid glass heart with gradient design
+4. **Native Feel** - Seamless macOS integration with system fonts and controls
+5. **Performance First** - Optimized for fast, responsive interaction
+6. **Persistent State** - Work is automatically saved across sessions
 
-### Design System
-1. **App Icon Display** - Prominently centered on loading screen with professional animations
-2. **Gradient Theme** - Consistent blue (#3B82F6) to pink (#EC4899) gradient throughout
-3. **Typography** - System fonts with gradient text effects for modern look
-4. **Color Consistency** - All UI elements match the icon's gradient color scheme
-5. **Hardware Acceleration** - Transform-based animations for smooth 60fps performance
-6. **Modern Effects** - Drop shadows, pulse effects, shimmer, and staggered animations
-
-### Visual Experience
+### App Icon Design
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d86a080e-112c-4908-b002-9b1098fcc2eb" alt="Loading Screen Visual Experience" width="600" />
+  <img src="assets/icon.svg" alt="Lovable App Icon Detail" width="200" height="200" />
   
-  **Loading Screen → Main App Transition**
+  **Tahoe-style liquid glass heart with gradient**
 </div>
 
-<br>
-
-```
-┌────────────────────────────────────┐
-│                                    │
-│          [Loading Screen]          │
-│                                    │
-│        ╔════════════════╗          │
-│        ║                ║          │
-│        ║   [App Icon]   ║ ← Centered, Animated
-│        ║                ║          │
-│        ╚════════════════╝          │
-│                                    │
-│           L o v a b l e            │
-│         (gradient text)            │
-│                                    │
-│            • • •                   │
-│      (animated dots)               │
-│                                    │
-│  Initializing your creative...    │
-│                                    │
-└────────────────────────────────────┘
-         ↓ Fades to ↓
-┌────────────────────────────────────┐
-│   lovable.dev full interface       │
-│                                    │
-└────────────────────────────────────┘
-```
+The app icon features:
+- Modern liquid glass aesthetic
+- Beautiful blue-to-pink gradient (#3B82F6 to #EC4899)
+- Heart shape symbolizing creativity and passion
+- Scalable SVG format for crisp display at any size
+- Automatically generated in multiple resolutions for macOS
 
 ---
 
@@ -319,7 +262,7 @@ We welcome contributions! Here's how you can help:
 - Maintain the existing code style
 - Test on Intel Mac before submitting
 - Update documentation for new features
-- Ensure the app icon displays correctly
+- Ensure compatibility with the latest Electron version
 
 ---
 
@@ -341,7 +284,7 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ### Made with ❤️ for the Lovable community
 
-![Lovable App Icon - Tahoe-style liquid glass heart with gradient](assets/icon.svg)
+<img src="assets/icon.svg" alt="Lovable App Icon" width="150" height="150" />
 
 **[⬆ Back to Top](#lovable-desktop-app)**
 

@@ -12,7 +12,7 @@
 
 ### ✨ A beautiful native Intel Mac application for [Lovable.dev](https://lovable.dev/)
 
-*Experience lovable.dev with an enhanced, modern UI in a dedicated desktop application*
+*Experience lovable.dev with an enhanced, modern UI featuring a stunning loading screen with a centered 200x200px animated app icon*
 
 </div>
 
@@ -23,53 +23,78 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <h3>🎨 Enhanced Modern UI</h3>
-      Beautiful gradient-based design with smooth animations and a stunning loading screen featuring the app icon
+      <h3>🎨 Beautiful Loading Screen</h3>
+      Stunning loading screen with centered 200x200px app icon, smooth pulse animations, gradient effects, and animated loading dots
     </td>
     <td align="center" width="50%">
       <h3>🚀 Native macOS Experience</h3>
-      Built specifically for Intel Mac computers with native integration and performance
+      Built specifically for Intel Mac computers with native integration and optimized performance
     </td>
   </tr>
   <tr>
     <td align="center">
       <h3>🌐 Full Web Access</h3>
-      Complete access to lovable.dev with all features and functionality
+      Complete access to lovable.dev with all features, functionality, and seamless integration
     </td>
     <td align="center">
       <h3>⚡ Fast & Responsive</h3>
-      Optimized performance with Electron and hardware acceleration
+      Optimized performance with Electron framework and hardware-accelerated animations
     </td>
   </tr>
   <tr>
     <td align="center">
       <h3>💫 Smooth Animations</h3>
-      Elegant loading screen with centered app icon and seamless transitions
+      Professional animations including icon pulse, title shimmer, staggered dot bounce, and smooth transitions
     </td>
     <td align="center">
       <h3>🔒 Secure</h3>
-      Context isolation and sandboxed environment for maximum security
+      Context isolation, sandboxed environment, and Content Security Policy for maximum security
     </td>
   </tr>
 </table>
 
 ---
 
+## ✨ App Icon Showcase
+
+<div align="center">
+  <img src="assets/icon.svg" alt="Lovable App Icon - Centered Display" width="250" height="250" />
+  
+  **Beautiful Tahoe-style liquid glass heart design with gradient**
+  
+  *This icon appears prominently centered on the loading screen with smooth pulse animations*
+</div>
+
+---
+
 ## 🖼️ Screenshots
 
 ### Loading Screen with Centered App Icon
-The app features a beautiful loading screen with the app icon centered and animated:
-- Stunning gradient background (dark navy to slate)
-- Large centered app icon with pulse animation
-- Smooth fade-in effects
-- Animated loading dots
-- "Initializing your creative workspace..." message
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d86a080e-112c-4908-b002-9b1098fcc2eb" alt="Lovable Loading Screen with Centered Icon" width="800" />
+</div>
+
+<br>
+
+The app features a beautiful, professional loading screen that appears on launch:
+- **Large Centered Icon**: 200x200px app icon prominently centered with pink glow
+- **Stunning Gradient Background**: Dark navy to slate gradient (#0F172A to #1E293B)
+- **Multiple Smooth Animations**: 
+  - Icon pulse effect (2s cycle: scale 1.0 → 1.05 and opacity 1.0 → 0.9)
+  - Title shimmer effect (3s cycle)
+  - Animated loading dots with staggered bounce (1.4s cycle with 0.2s delays)
+  - Fade-in entrance animation (0.8s)
+  - Fade-out exit animation (0.5s)
+- **Duration**: 2.5 seconds display + 0.5s fade-out = 3 seconds total
+- **Message**: "Initializing your creative workspace..."
 
 ### Main Application Window
-- Clean, minimal interface
+- Clean, minimal interface with no unnecessary chrome
 - Full-featured webview displaying lovable.dev
 - Seamless integration with the Lovable platform
-- Native macOS window controls
+- Native macOS window controls and behavior
+- Persistent session state across app launches
 
 ---
 
@@ -217,28 +242,40 @@ git push origin v1.0.1
 
 ## 🎨 UI Enhancements
 
-The app includes several UI enhancements over a basic web wrapper:
+The app provides a premium desktop experience with professional UI enhancements:
 
-### Loading Screen (⭐ New!)
-- **Centered App Icon**: Large (200x200px) app icon with pulse animation
-- **Gradient Background**: Dark navy gradient creating depth
-- **Smooth Animations**: 
-  - Icon pulse effect (scale and opacity)
-  - Title shimmer effect
-  - Animated loading dots with staggered bounce
-  - Fade-in entrance, fade-out exit
-- **Professional Feel**: 2.5 second branded loading experience
-- **Drop Shadow**: Icon has pink gradient glow for depth
+### Loading Screen ⭐ Featured!
+- **Centered App Icon**: Large 200x200px icon prominently centered on screen
+- **Gradient Background**: Dark navy gradient (#0F172A to #1E293B) creating visual depth
+- **Icon Animations**: 
+  - Pulse effect with smooth scale (1.0 → 1.05) and opacity (1.0 → 0.9) transitions
+  - Pink gradient drop shadow (rgba(236, 72, 153, 0.3)) for depth
+- **Title Effects**: "Lovable" text with blue-to-pink gradient and shimmer animation
+- **Loading Indicator**: Three animated dots with staggered bounce effect (0s, 0.2s, 0.4s delays)
+- **Smooth Transitions**: 
+  - Fade-in entrance (0.8s)
+  - Fade-out exit (0.5s)
+- **Duration**: 2.5 seconds branded experience + 0.5s transition = 3s total
+- **Auto-dismiss**: Automatically transitions to main app after loading
 
-### Design Elements
-1. **App Icon Display** - Prominently centered on loading screen with animations
-2. **Gradient Theme** - Blue to pink gradient matching the app icon
-3. **Typography** - System fonts with gradient text effects
-4. **Color Consistency** - All UI elements match the icon's color scheme
-5. **Smooth Transitions** - Hardware-accelerated animations
-6. **Modern Effects** - Drop shadows, pulses, and shimmers
+### Design System
+1. **App Icon Display** - Prominently centered on loading screen with professional animations
+2. **Gradient Theme** - Consistent blue (#3B82F6) to pink (#EC4899) gradient throughout
+3. **Typography** - System fonts with gradient text effects for modern look
+4. **Color Consistency** - All UI elements match the icon's gradient color scheme
+5. **Hardware Acceleration** - Transform-based animations for smooth 60fps performance
+6. **Modern Effects** - Drop shadows, pulse effects, shimmer, and staggered animations
 
 ### Visual Experience
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d86a080e-112c-4908-b002-9b1098fcc2eb" alt="Loading Screen Visual Experience" width="600" />
+  
+  **Loading Screen → Main App Transition**
+</div>
+
+<br>
+
 ```
 ┌────────────────────────────────────┐
 │                                    │

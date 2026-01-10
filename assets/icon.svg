@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lovable heart icon with waves">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Solid dark background -->
+  <rect x="0" y="0" width="512" height="512" fill="#000000"/>
+  
+  <!-- Heart shape with gradient -->
   <defs>
-    <!-- Main gradient from orange to pink to purple to blue -->
     <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FF5500"/>
       <stop offset="20%" stop-color="#FF4455"/>
@@ -9,64 +12,20 @@
       <stop offset="70%" stop-color="#9955EE"/>
       <stop offset="100%" stop-color="#6677FF"/>
     </linearGradient>
-
-    <!-- Stylized heart clip path - large circular left lobe, smaller right -->
     <clipPath id="heartClip">
-      <path d="M152 95
-        C92 95 55 145 55 205
-        C55 250 72 292 105 335
-        C138 378 185 418 240 450
-        C265 437 305 408 342 365
-        C379 322 408 272 408 218
-        C408 163 370 125 325 125
-        C295 125 270 142 253 167
-        C245 180 239 195 236 210
-        C233 185 225 163 213 143
-        C196 117 175 95 152 95 Z"/>
+      <path d="M152 95 C92 95 55 145 55 205 C55 250 72 292 105 335 C138 378 185 418 240 450 C265 437 305 408 342 365 C379 322 408 272 408 218 C408 163 370 125 325 125 C295 125 270 142 253 167 C245 180 239 195 236 210 C233 185 225 163 213 143 C196 117 175 95 152 95 Z"/>
     </clipPath>
   </defs>
   
-  <!-- Square background - macOS applies its own rounded mask -->
-  <rect x="0" y="0" width="512" height="512" fill="#0F172A"/>
-  
-  <!-- Main group - heart centered -->
+  <!-- Heart centered -->
   <g transform="translate(23, 20)">
-    <!-- Heart shape - large circular left lobe -->
-    <path d="M152 95
-      C92 95 55 145 55 205
-      C55 250 72 292 105 335
-      C138 378 185 418 240 450
-      C265 437 305 408 342 365
-      C379 322 408 272 408 218
-      C408 163 370 125 325 125
-      C295 125 270 142 253 167
-      C245 180 239 195 236 210
-      C233 185 225 163 213 143
-      C196 117 175 95 152 95 Z"
-      fill="url(#heartGradient)"/>
-
-    <!-- Wave lines - curve up on right, flow down to left -->
+    <path d="M152 95 C92 95 55 145 55 205 C55 250 72 292 105 335 C138 378 185 418 240 450 C265 437 305 408 342 365 C379 322 408 272 408 218 C408 163 370 125 325 125 C295 125 270 142 253 167 C245 180 239 195 236 210 C233 185 225 163 213 143 C196 117 175 95 152 95 Z" fill="url(#heartGradient)"/>
+    
+    <!-- Wave lines -->
     <g clip-path="url(#heartClip)">
-      <!-- First wave (top) - rises on right -->
-      <path d="M45 295
-        C90 312 135 277 175 243
-        C215 209 270 175 325 158
-        C380 141 420 150 445 167"
-        fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
-      
-      <!-- Second wave (middle) -->
-      <path d="M45 355
-        C90 377 135 342 175 308
-        C215 274 270 240 325 223
-        C380 206 420 215 445 232"
-        fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
-      
-      <!-- Third wave (bottom) -->
-      <path d="M45 415
-        C90 442 135 407 175 373
-        C215 339 270 305 325 288
-        C380 271 420 280 445 297"
-        fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M45 295 C90 312 135 277 175 243 C215 209 270 175 325 158 C380 141 420 150 445 167" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M45 355 C90 377 135 342 175 308 C215 274 270 240 325 223 C380 206 420 215 445 232" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M45 415 C90 442 135 407 175 373 C215 339 270 305 325 288 C380 271 420 280 445 297" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
     </g>
   </g>
 </svg>

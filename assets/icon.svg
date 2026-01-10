@@ -1,33 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Heart gradient from orange to pink to purple to blue -->
-    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF6B35"/>
-      <stop offset="25%" stop-color="#FF5555"/>
-      <stop offset="50%" stop-color="#E84FAA"/>
-      <stop offset="75%" stop-color="#9B59B6"/>
-      <stop offset="100%" stop-color="#667EEA"/>
+    <linearGradient id="gradient" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FF6633"/>
+      <stop offset="35%" stop-color="#FF5566"/>
+      <stop offset="65%" stop-color="#CC55AA"/>
+      <stop offset="100%" stop-color="#5566EE"/>
     </linearGradient>
-    
-    <!-- Clip path for waves -->
-    <clipPath id="heartClip">
-      <path d="M256 420 C160 345 75 270 75 175 C75 110 125 60 190 60 C225 60 256 80 256 80 C256 80 287 60 322 60 C387 60 437 110 437 175 C437 270 352 345 256 420 Z"/>
-    </clipPath>
   </defs>
   
-  <!-- Dark rounded square background - macOS Big Sur style -->
-  <rect x="0" y="0" width="512" height="512" rx="115" ry="115" fill="#1a1a2e"/>
-  
-  <!-- Heart centered on background -->
-  <g>
-    <path d="M256 420 C160 345 75 270 75 175 C75 110 125 60 190 60 C225 60 256 80 256 80 C256 80 287 60 322 60 C387 60 437 110 437 175 C437 270 352 345 256 420 Z" fill="url(#heartGradient)"/>
-    
-    <!-- Wave lines -->
-    <g clip-path="url(#heartClip)">
-      <path d="M50 220 C100 190 150 210 200 175 C250 140 300 160 350 130 C400 100 450 115 480 100" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
-      <path d="M50 290 C100 260 150 280 200 245 C250 210 300 230 350 200 C400 170 450 185 480 170" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
-      <path d="M50 360 C100 330 150 350 200 315 C250 280 300 300 350 270 C400 240 450 255 480 240" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
-    </g>
-  </g>
+  <!-- Official Lovable heart shape -->
+  <path d="M156 48
+    C88 48 40 100 40 172
+    C40 260 120 340 200 410
+    L256 456
+    L312 410
+    C392 340 472 260 472 172
+    C472 100 424 48 356 48
+    C312 48 280 72 256 108
+    C232 72 200 48 156 48
+    Z" fill="url(#gradient)"/>
 </svg>

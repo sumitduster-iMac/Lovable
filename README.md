@@ -55,9 +55,28 @@
 
 ---
 
+## ✨ App Icon Showcase
+
+<div align="center">
+  <img src="assets/icon.svg" alt="Lovable App Icon - Centered Display" width="250" height="250" />
+  
+  **Beautiful Tahoe-style liquid glass heart design with gradient**
+  
+  *This icon appears prominently centered on the loading screen with smooth pulse animations*
+</div>
+
+---
+
 ## 🖼️ Screenshots
 
 ### Loading Screen with Centered App Icon
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d86a080e-112c-4908-b002-9b1098fcc2eb" alt="Lovable Loading Screen with Centered Icon" width="800" />
+</div>
+
+<br>
+
 The app features a beautiful, professional loading screen that appears on launch:
 - **Large Centered Icon**: 200x200px app icon prominently centered with pink glow
 - **Stunning Gradient Background**: Dark navy to slate gradient (#0F172A to #1E293B)
@@ -248,6 +267,15 @@ The app provides a premium desktop experience with professional UI enhancements:
 6. **Modern Effects** - Drop shadows, pulse effects, shimmer, and staggered animations
 
 ### Visual Experience
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d86a080e-112c-4908-b002-9b1098fcc2eb" alt="Loading Screen Visual Experience" width="600" />
+  
+  **Loading Screen → Main App Transition**
+</div>
+
+<br>
+
 ```
 ┌────────────────────────────────────┐
 │                                    │

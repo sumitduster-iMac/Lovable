@@ -32,8 +32,8 @@
     </clipPath>
   </defs>
   
-  <!-- macOS-style rounded square background -->
-  <rect width="512" height="512" rx="115" ry="115" fill="url(#bgGradient)"/>
+  <!-- Square background - macOS applies its own rounded mask -->
+  <rect width="512" height="512" fill="url(#bgGradient)"/>
   
   <!-- Main group - heart centered -->
   <g transform="translate(23, 20)">

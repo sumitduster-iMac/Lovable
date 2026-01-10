@@ -52,18 +52,9 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-  // Ensure dock icon is correct in development builds on macOS.
-  if (process.platform === 'darwin' && app.dock) {
-    const iconPath = path.join(__dirname, 'assets', 'icon.png');
-    try {
-      const icon = nativeImage.createFromPath(iconPath);
-      if (!icon.isEmpty()) {
-        app.dock.setIcon(icon);
-      }
-    } catch (_) {
-      // Ignore failures (e.g., missing icon in some dev setups).
-    }
-  }
+  // Note: Removed app.dock.setIcon() call to prevent dock icon animation.
+  // The app bundle's .icns file is used automatically by macOS for the dock icon.
+  // Setting it dynamically can cause the icon to enlarge or animate when the app opens.
 
   createWindow();
 

@@ -29,26 +29,14 @@ const MACOS_ICON_SIZES = [
 
 const MAIN_SIZE = 1024;
 
-// macOS Big Sur style rounded rectangle (squircle) mask
-// The radius is approximately 22.37% of the icon size for Big Sur style
-function createBigSurMask(size) {
-  const radius = Math.round(size * 0.2237);
-  return `
-    <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-      <defs>
-        <clipPath id="bigSurClip">
-          <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}"/>
-        </clipPath>
-      </defs>
-      <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="#F7F4ED"/>
-      <g clip-path="url(#bigSurClip)">
-        {{CONTENT}}
-      </g>
-    </svg>
-  `;
-}
+// macOS Big Sur style constants
+// Corner radius is ~22.37% of icon size
+// Content padding is ~10% on each side (so content is ~80% of icon size)
+const CORNER_RADIUS_PERCENT = 0.2237;
+const CONTENT_SCALE = 0.80;  // Content takes 80% of the icon size
+const CONTENT_OFFSET_PERCENT = 0.10;  // 10% padding on each side
 
-// Wrap original SVG content in Big Sur rounded mask
+// Wrap original SVG content in Big Sur rounded mask with proper padding
 function wrapWithBigSurMask(originalSvg, size) {
   // Extract the inner content from the original SVG (everything between <svg> tags)
   const contentMatch = originalSvg.match(/<svg[^>]*>([\s\S]*)<\/svg>/i);
@@ -63,21 +51,27 @@ function wrapWithBigSurMask(originalSvg, size) {
   const viewBox = viewBoxMatch ? viewBoxMatch[1] : '0 0 600 600';
   const [, , vbWidth, vbHeight] = viewBox.split(/\s+/).map(Number);
   
-  const radius = Math.round(size * 0.2237);
+  const radius = Math.round(size * CORNER_RADIUS_PERCENT);
+  const contentSize = Math.round(size * CONTENT_SCALE);
+  const offset = Math.round(size * CONTENT_OFFSET_PERCENT);
+  const scale = contentSize / Math.max(vbWidth, vbHeight);
   
-  // Create new SVG with Big Sur mask and scaled content
+  // Create new SVG with Big Sur mask and properly scaled/centered content
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
   <defs>
     <clipPath id="bigSurClip">
       <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}"/>
     </clipPath>
+    <clipPath id="contentClip">
+      <rect x="${offset}" y="${offset}" width="${contentSize}" height="${contentSize}" rx="${Math.round(radius * 0.5)}" ry="${Math.round(radius * 0.5)}"/>
+    </clipPath>
   </defs>
   <!-- Background with rounded corners -->
   <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="#F7F4ED"/>
-  <!-- Clipped content -->
+  <!-- Centered and padded content -->
   <g clip-path="url(#bigSurClip)">
-    <g transform="scale(${size / vbWidth}, ${size / vbHeight})">
+    <g transform="translate(${offset}, ${offset}) scale(${scale})">
       ${innerContent}
     </g>
   </g>
@@ -123,7 +117,7 @@ async function main() {
     const mainPng = await generatePng(mainSvg, MAIN_SIZE);
     await fs.writeFile(pngPath, mainPng);
     // eslint-disable-next-line no-console
-    console.log(`✅ Generated ${path.relative(projectRoot, pngPath)} (${MAIN_SIZE}x${MAIN_SIZE}) with Big Sur rounded corners`);
+    console.log(`✅ Generated ${path.relative(projectRoot, pngPath)} (${MAIN_SIZE}x${MAIN_SIZE}) with Big Sur style`);
 
     // Generate all macOS icon sizes with Big Sur mask
     for (const { size, name } of MACOS_ICON_SIZES) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <!-- Solid dark background -->
-  <rect x="0" y="0" width="512" height="512" fill="#000000"/>
+  <!-- Big Sur style dark background -->
+  <rect x="0" y="0" width="512" height="512" fill="#1a1a2e"/>
   
   <!-- Heart shape with gradient -->
   <defs>

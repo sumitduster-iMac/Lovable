@@ -29,6 +29,61 @@ const MACOS_ICON_SIZES = [
 
 const MAIN_SIZE = 1024;
 
+// macOS Big Sur style rounded rectangle (squircle) mask
+// The radius is approximately 22.37% of the icon size for Big Sur style
+function createBigSurMask(size) {
+  const radius = Math.round(size * 0.2237);
+  return `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+      <defs>
+        <clipPath id="bigSurClip">
+          <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}"/>
+        </clipPath>
+      </defs>
+      <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="#F7F4ED"/>
+      <g clip-path="url(#bigSurClip)">
+        {{CONTENT}}
+      </g>
+    </svg>
+  `;
+}
+
+// Wrap original SVG content in Big Sur rounded mask
+function wrapWithBigSurMask(originalSvg, size) {
+  // Extract the inner content from the original SVG (everything between <svg> tags)
+  const contentMatch = originalSvg.match(/<svg[^>]*>([\s\S]*)<\/svg>/i);
+  if (!contentMatch) {
+    throw new Error('Could not parse SVG content');
+  }
+  
+  const innerContent = contentMatch[1];
+  
+  // Get original viewBox dimensions
+  const viewBoxMatch = originalSvg.match(/viewBox=["']([^"']+)["']/);
+  const viewBox = viewBoxMatch ? viewBoxMatch[1] : '0 0 600 600';
+  const [, , vbWidth, vbHeight] = viewBox.split(/\s+/).map(Number);
+  
+  const radius = Math.round(size * 0.2237);
+  
+  // Create new SVG with Big Sur mask and scaled content
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+  <defs>
+    <clipPath id="bigSurClip">
+      <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}"/>
+    </clipPath>
+  </defs>
+  <!-- Background with rounded corners -->
+  <rect x="0" y="0" width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="#F7F4ED"/>
+  <!-- Clipped content -->
+  <g clip-path="url(#bigSurClip)">
+    <g transform="scale(${size / vbWidth}, ${size / vbHeight})">
+      ${innerContent}
+    </g>
+  </g>
+</svg>`;
+}
+
 async function generatePng(svg, size) {
   const resvg = new Resvg(svg, {
     fitTo: { mode: 'width', value: size },
@@ -52,15 +107,9 @@ async function main() {
     // eslint-disable-next-line no-console
     console.log(`✅ Copied ${path.relative(projectRoot, svgPath)} to ${path.relative(projectRoot, pngPath)} (source is PNG)`);
   } else {
-    // If source is SVG, convert it
-    const svg = sourceData.toString('utf8');
+    // If source is SVG, convert it with Big Sur rounded corners
+    const originalSvg = sourceData.toString('utf8');
     
-    // Generate main icon (1024x1024)
-    const mainPng = await generatePng(svg, MAIN_SIZE);
-    await fs.writeFile(pngPath, mainPng);
-    // eslint-disable-next-line no-console
-    console.log(`✅ Generated ${path.relative(projectRoot, pngPath)} (${MAIN_SIZE}x${MAIN_SIZE})`);
-
     // Create icons directory for macOS iconset
     const iconsDir = path.join(assetsDir, 'icons');
     try {
@@ -69,15 +118,23 @@ async function main() {
       // Directory might already exist
     }
 
-    // Generate all macOS icon sizes
+    // Generate main icon (1024x1024) with Big Sur mask
+    const mainSvg = wrapWithBigSurMask(originalSvg, MAIN_SIZE);
+    const mainPng = await generatePng(mainSvg, MAIN_SIZE);
+    await fs.writeFile(pngPath, mainPng);
+    // eslint-disable-next-line no-console
+    console.log(`✅ Generated ${path.relative(projectRoot, pngPath)} (${MAIN_SIZE}x${MAIN_SIZE}) with Big Sur rounded corners`);
+
+    // Generate all macOS icon sizes with Big Sur mask
     for (const { size, name } of MACOS_ICON_SIZES) {
-      const iconPng = await generatePng(svg, size);
+      const maskedSvg = wrapWithBigSurMask(originalSvg, size);
+      const iconPng = await generatePng(maskedSvg, size);
       const iconPath = path.join(iconsDir, name);
       await fs.writeFile(iconPath, iconPng);
     }
     
     // eslint-disable-next-line no-console
-    console.log(`✅ Generated ${MACOS_ICON_SIZES.length} macOS icon sizes in assets/icons/`);
+    console.log(`✅ Generated ${MACOS_ICON_SIZES.length} macOS Big Sur style icons in assets/icons/`);
   }
 }
 

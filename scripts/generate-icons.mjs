@@ -12,8 +12,10 @@ const assetsDir = path.join(projectRoot, 'assets');
 
 const svgPath = path.join(assetsDir, 'icon.svg');
 const pngPath = path.join(assetsDir, 'icon.png');
+const iconsetDir = path.join(assetsDir, 'icon.iconset');
 
 // macOS icon sizes needed for .icns generation
+// These follow Apple's official iconset naming conventions
 const MACOS_ICON_SIZES = [
   { size: 16, name: 'icon_16x16.png' },
   { size: 32, name: 'icon_16x16@2x.png' },
@@ -112,6 +114,13 @@ async function main() {
       // Directory might already exist
     }
 
+    // Create icon.iconset directory for proper macOS .icns generation
+    try {
+      await fs.mkdir(iconsetDir, { recursive: true });
+    } catch (err) {
+      // Directory might already exist
+    }
+
     // Generate main icon (1024x1024) with Big Sur mask
     const mainSvg = wrapWithBigSurMask(originalSvg, MAIN_SIZE);
     const mainPng = await generatePng(mainSvg, MAIN_SIZE);
@@ -120,15 +129,40 @@ async function main() {
     console.log(`✅ Generated ${path.relative(projectRoot, pngPath)} (${MAIN_SIZE}x${MAIN_SIZE}) with Big Sur style`);
 
     // Generate all macOS icon sizes with Big Sur mask
+    // Write to both the icons directory and the icon.iconset directory
     for (const { size, name } of MACOS_ICON_SIZES) {
       const maskedSvg = wrapWithBigSurMask(originalSvg, size);
       const iconPng = await generatePng(maskedSvg, size);
+      
+      // Write to icons directory (for reference)
       const iconPath = path.join(iconsDir, name);
       await fs.writeFile(iconPath, iconPng);
+      
+      // Write to icon.iconset directory (for .icns conversion)
+      const iconsetPath = path.join(iconsetDir, name);
+      await fs.writeFile(iconsetPath, iconPng);
     }
     
     // eslint-disable-next-line no-console
     console.log(`✅ Generated ${MACOS_ICON_SIZES.length} macOS Big Sur style icons in assets/icons/`);
+    // eslint-disable-next-line no-console
+    console.log(`✅ Generated icon.iconset directory for .icns conversion`);
+    
+    // On macOS, attempt to convert iconset to .icns using iconutil
+    if (process.platform === 'darwin') {
+      try {
+        const { execSync } = await import('node:child_process');
+        const icnsPath = path.join(assetsDir, 'icon.icns');
+        execSync(`iconutil -c icns "${iconsetDir}" -o "${icnsPath}"`, { stdio: 'inherit' });
+        // eslint-disable-next-line no-console
+        console.log(`✅ Generated ${path.relative(projectRoot, icnsPath)} using iconutil`);
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.warn(`⚠️  Could not generate .icns file (iconutil not available or failed): ${err.message}`);
+        // eslint-disable-next-line no-console
+        console.warn('   electron-builder will handle icon conversion during build');
+      }
+    }
   }
 }
 

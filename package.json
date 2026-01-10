@@ -33,7 +33,6 @@
     "directories": {
       "buildResources": "assets"
     },
-    "icon": "assets/icon.png",
     "mac": {
       "target": [
         {
@@ -42,11 +41,11 @@
         }
       ],
       "category": "public.app-category.developer-tools",
-      "icon": "assets/icon.png",
+      "icon": "assets/icon.iconset",
       "identity": null
     },
     "dmg": {
-      "icon": "assets/icon.png"
+      "icon": "assets/icon.icns"
     },
     "files": [
       "main.js",

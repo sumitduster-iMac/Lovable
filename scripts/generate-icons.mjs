@@ -13,7 +13,7 @@ const assetsDir = path.join(projectRoot, 'assets');
 const svgPath = path.join(assetsDir, 'icon.svg');
 const pngPath = path.join(assetsDir, 'icon.png');
 
-const SIZE = 1024;
+const SIZE = 200;
 
 async function main() {
   const svg = await fs.readFile(svgPath, 'utf8');

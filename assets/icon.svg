@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-  <!-- Big Sur style dark background -->
-  <rect x="0" y="0" width="512" height="512" fill="#1a1a2e"/>
-  
-  <!-- Heart shape with gradient -->
   <defs>
+    <!-- Heart gradient from orange to pink to purple to blue -->
     <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF5500"/>
-      <stop offset="20%" stop-color="#FF4455"/>
-      <stop offset="45%" stop-color="#DD40A0"/>
-      <stop offset="70%" stop-color="#9955EE"/>
-      <stop offset="100%" stop-color="#6677FF"/>
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="25%" stop-color="#FF5555"/>
+      <stop offset="50%" stop-color="#E84FAA"/>
+      <stop offset="75%" stop-color="#9B59B6"/>
+      <stop offset="100%" stop-color="#667EEA"/>
     </linearGradient>
+    
+    <!-- Drop shadow for Big Sur style -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    
+    <!-- Clip path for waves -->
     <clipPath id="heartClip">
-      <path d="M152 95 C92 95 55 145 55 205 C55 250 72 292 105 335 C138 378 185 418 240 450 C265 437 305 408 342 365 C379 322 408 272 408 218 C408 163 370 125 325 125 C295 125 270 142 253 167 C245 180 239 195 236 210 C233 185 225 163 213 143 C196 117 175 95 152 95 Z"/>
+      <path d="M256 456 C140 368 44 288 44 176 C44 100 104 44 180 44 C220 44 256 68 256 68 C256 68 292 44 332 44 C408 44 468 100 468 176 C468 288 372 368 256 456 Z"/>
     </clipPath>
   </defs>
   
-  <!-- Heart centered -->
-  <g transform="translate(23, 20)">
-    <path d="M152 95 C92 95 55 145 55 205 C55 250 72 292 105 335 C138 378 185 418 240 450 C265 437 305 408 342 365 C379 322 408 272 408 218 C408 163 370 125 325 125 C295 125 270 142 253 167 C245 180 239 195 236 210 C233 185 225 163 213 143 C196 117 175 95 152 95 Z" fill="url(#heartGradient)"/>
+  <!-- Heart with shadow -->
+  <g filter="url(#shadow)">
+    <path d="M256 456 C140 368 44 288 44 176 C44 100 104 44 180 44 C220 44 256 68 256 68 C256 68 292 44 332 44 C408 44 468 100 468 176 C468 288 372 368 256 456 Z" fill="url(#heartGradient)"/>
     
     <!-- Wave lines -->
     <g clip-path="url(#heartClip)">
-      <path d="M45 295 C90 312 135 277 175 243 C215 209 270 175 325 158 C380 141 420 150 445 167" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
-      <path d="M45 355 C90 377 135 342 175 308 C215 274 270 240 325 223 C380 206 420 215 445 232" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
-      <path d="M45 415 C90 442 135 407 175 373 C215 339 270 305 325 288 C380 271 420 280 445 297" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.95"/>
+      <path d="M20 240 C80 200 140 220 200 180 C260 140 320 160 380 120 C440 80 500 100 520 80" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+      <path d="M20 320 C80 280 140 300 200 260 C260 220 320 240 380 200 C440 160 500 180 520 160" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+      <path d="M20 400 C80 360 140 380 200 340 C260 300 320 320 380 280 C440 240 500 260 520 240" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
     </g>
   </g>
 </svg>

@@ -20,7 +20,7 @@ async function main() {
 
   const resvg = new Resvg(svg, {
     fitTo: { mode: 'width', value: SIZE },
-    background: '#1a1a2e',
+    background: 'rgba(0,0,0,0)',
   });
 
   const rendered = resvg.render();

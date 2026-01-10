@@ -12,20 +12,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div id="loadingScreen" class="loading-screen">
-    <div class="loading-content">
-      <img src="assets/icon.svg" alt="Lovable App Icon" class="loading-icon">
-      <h1 class="loading-title">Lovable</h1>
-      <div class="loading-dots">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-      <p class="loading-text">Initializing your creative workspace...</p>
-    </div>
-  </div>
-
   <div class="app-container">
     <!-- WebView Frame Container -->
     <div class="frame-container">
@@ -40,20 +26,11 @@
 
   <script>
     const webview = document.getElementById('lovableWebview');
-    const loadingScreen = document.getElementById('loadingScreen');
 
     // Wait for webview to be ready
     webview.addEventListener('dom-ready', () => {
       console.log('Lovable webview loaded');
     });
-
-    // Auto-dismiss loading screen after 2.5 seconds
-    setTimeout(() => {
-      loadingScreen.classList.add('fade-out');
-      setTimeout(() => {
-        loadingScreen.style.display = 'none';
-      }, 500); // Wait for fade-out animation to complete
-    }, 2500);
   </script>
 </body>
 </html>

@@ -14,7 +14,19 @@
 
 *Experience lovable.dev with a clean, native desktop application built specifically for Mac*
 
+[Features](#-features) • [Quick Start](#-quick-start) • [Installation](#-installation) • [Building](#-building-the-app) • [Development](#️-development)
+
 </div>
+
+---
+
+## 📋 System Requirements
+
+- **Operating System**: macOS 10.13 (High Sierra) or later
+- **Architecture**: Intel x64 (64-bit)
+- **Node.js**: v16 or higher
+- **RAM**: 4GB minimum (8GB recommended)
+- **Disk Space**: ~200MB for app installation
 
 ---
 
@@ -67,14 +79,27 @@
 
 ---
 
+## 💡 Why Use This App?
+
+Using Lovable Desktop App instead of the web browser provides several advantages:
+
+- **🎯 Dedicated Workspace**: Keep Lovable separate from your browser tabs for better focus
+- **⚡ Instant Access**: Launch directly to Lovable without opening a browser first
+- **🔔 Native Integration**: Appears in Dock, Cmd+Tab, and macOS app switcher like any native app
+- **💾 Session Persistence**: Login state and work sessions automatically persist between launches
+- **🖥️ System Integration**: Full macOS integration with native window controls and behavior
+- **🎨 Clean Interface**: No browser chrome, address bar, or bookmarks bar - just your workspace
+
+---
+
 ## 🖼️ Application Window
 
 The app provides a clean, minimal interface:
-- **Instant Launch**: Opens directly to lovable.dev without delays
+- **Instant Launch**: Opens directly to lovable.dev
 - **Full-Featured Webview**: Complete access to all Lovable platform features
 - **Seamless Integration**: Native macOS window controls and behavior
-- **Persistent Sessions**: Your work is automatically saved across app launches
-- **Clean Interface**: No unnecessary chrome, just the tools you need
+- **Persistent Sessions**: Your login and work sessions persist between app launches
+- **Clean Interface**: Full-screen webview with no extra chrome
 
 ---
 
@@ -135,7 +160,7 @@ npm start
 The app will:
 1. Generate required icons from SVG source
 2. Launch the Electron application
-3. Open lovable.dev instantly in the webview
+3. Load lovable.dev in a full-screen webview
 
 ---
 
@@ -225,11 +250,11 @@ The app provides a premium desktop experience with a focus on performance and us
 
 ### Design Philosophy
 1. **Instant Startup** - Opens directly to lovable.dev for immediate productivity
-2. **Clean Interface** - Minimal chrome and distractions, maximum workspace
+2. **Minimal Interface** - Full-screen webview with no distractions
 3. **Beautiful Icon** - Tahoe-style liquid glass heart with gradient design
-4. **Native Feel** - Seamless macOS integration with system fonts and controls
+4. **Native Feel** - Seamless macOS integration with native window controls
 5. **Performance First** - Optimized for fast, responsive interaction
-6. **Persistent State** - Work is automatically saved across sessions
+6. **Persistent Sessions** - Login and work sessions persist between launches
 
 ### App Icon Design
 
@@ -245,6 +270,35 @@ The app icon features:
 - Heart shape symbolizing creativity and passion
 - Scalable SVG format for crisp display at any size
 - Automatically generated in multiple resolutions for macOS
+
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### App won't start
+- Ensure all dependencies are installed: `npm install`
+- Verify Node.js is installed: `node --version` (should be v16+)
+- Try clearing and reinstalling dependencies:
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install
+  ```
+
+#### Webview shows blank page
+- Check your internet connection
+- Verify lovable.dev is accessible in your web browser
+- Try restarting the app
+
+#### Build fails
+- Ensure `electron-builder` is installed
+- On macOS, install Xcode Command Line Tools: `xcode-select --install`
+- Check that you have sufficient disk space
+
+#### Icons not generating
+- The app will work without generated icons using the SVG fallback
+- Ensure `@resvg/resvg-js` is installed: `npm install`
 
 ---
 

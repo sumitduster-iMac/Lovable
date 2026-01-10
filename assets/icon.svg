@@ -1,74 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lovable heart icon with waves">
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Main gradient from orange to pink to purple to blue -->
-    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF5500"/>
-      <stop offset="20%" stop-color="#FF4455"/>
-      <stop offset="45%" stop-color="#DD40A0"/>
-      <stop offset="70%" stop-color="#9955EE"/>
-      <stop offset="100%" stop-color="#6677FF"/>
+    <linearGradient id="gradient" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FF6633"/>
+      <stop offset="35%" stop-color="#FF5566"/>
+      <stop offset="65%" stop-color="#CC55AA"/>
+      <stop offset="100%" stop-color="#5566EE"/>
     </linearGradient>
-
-    <!-- Soft shadow filter -->
-    <filter id="dropShadow" x="-30%" y="-20%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.28"/>
-    </filter>
-
-    <!-- Stylized heart clip path - large circular left lobe, smaller right -->
-    <clipPath id="heartClip">
-      <path d="M160 70
-        C85 70 40 130 40 205
-        C40 260 60 310 100 360
-        C140 410 195 455 260 490
-        C290 475 340 440 385 390
-        C430 340 465 280 465 215
-        C465 150 420 105 365 105
-        C330 105 300 125 280 155
-        C270 170 262 188 258 205
-        C254 175 245 150 230 125
-        C210 95 185 70 160 70 Z"/>
-    </clipPath>
   </defs>
   
-  <!-- Main group with shadow -->
-  <g filter="url(#dropShadow)">
-    <!-- Heart shape - large circular left lobe -->
-    <path d="M160 70
-      C85 70 40 130 40 205
-      C40 260 60 310 100 360
-      C140 410 195 455 260 490
-      C290 475 340 440 385 390
-      C430 340 465 280 465 215
-      C465 150 420 105 365 105
-      C330 105 300 125 280 155
-      C270 170 262 188 258 205
-      C254 175 245 150 230 125
-      C210 95 185 70 160 70 Z"
-      fill="url(#heartGradient)"/>
-
-    <!-- Wave lines - curve up on right, flow down to left -->
-    <g clip-path="url(#heartClip)">
-      <!-- First wave (top) - rises on right -->
-      <path d="M30 310
-        C80 330 130 290 180 250
-        C230 210 290 170 350 150
-        C410 130 460 140 490 160"
-        fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
-      
-      <!-- Second wave (middle) -->
-      <path d="M30 375
-        C80 400 130 360 180 320
-        C230 280 290 240 350 220
-        C410 200 460 210 490 230"
-        fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
-      
-      <!-- Third wave (bottom) -->
-      <path d="M30 445
-        C80 475 130 435 180 395
-        C230 355 290 315 350 295
-        C410 275 460 285 490 305"
-        fill="none" stroke="white" stroke-width="7" stroke-linecap="round" opacity="0.95"/>
-    </g>
-  </g>
+  <!-- Official Lovable heart shape -->
+  <path d="M156 48
+    C88 48 40 100 40 172
+    C40 260 120 340 200 410
+    L256 456
+    L312 410
+    C392 340 472 260 472 172
+    C472 100 424 48 356 48
+    C312 48 280 72 256 108
+    C232 72 200 48 156 48
+    Z" fill="url(#gradient)"/>
 </svg>

@@ -1,10 +1,11 @@
-const { app, BrowserWindow, shell } = require('electron');
+const { app, BrowserWindow, shell, nativeImage } = require('electron');
 const path = require('path');
 
 let mainWindow;
 
 function createWindow() {
   const iconPath = path.join(__dirname, 'assets', 'icon.png');
+  const icon = nativeImage.createFromPath(iconPath);
 
   mainWindow = new BrowserWindow({
     width: 1400,
@@ -14,7 +15,7 @@ function createWindow() {
     titleBarStyle: 'hiddenInset',
     backgroundColor: '#0F172A',
     // Used on Windows/Linux; macOS uses the app bundle icon (and dock icon set below).
-    icon: iconPath,
+    icon: icon,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -55,9 +56,9 @@ app.whenReady().then(() => {
   if (process.platform === 'darwin' && app.dock) {
     const iconPath = path.join(__dirname, 'assets', 'icon.png');
     try {
-      const maybePromise = app.dock.setIcon(iconPath);
-      if (maybePromise && typeof maybePromise.catch === 'function') {
-        maybePromise.catch(() => {});
+      const icon = nativeImage.createFromPath(iconPath);
+      if (!icon.isEmpty()) {
+        app.dock.setIcon(icon);
       }
     } catch (_) {
       // Ignore failures (e.g., missing icon in some dev setups).

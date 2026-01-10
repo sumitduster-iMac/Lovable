@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lovable heart icon with waves">
   <defs>
-    <!-- Background gradient - dark blue -->
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B"/>
-      <stop offset="100%" stop-color="#0F172A"/>
-    </linearGradient>
-    
     <!-- Main gradient from orange to pink to purple to blue -->
     <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FF5500"/>
@@ -33,7 +27,7 @@
   </defs>
   
   <!-- Square background - macOS applies its own rounded mask -->
-  <rect width="512" height="512" fill="url(#bgGradient)"/>
+  <rect x="0" y="0" width="512" height="512" fill="#0F172A"/>
   
   <!-- Main group - heart centered -->
   <g transform="translate(23, 20)">

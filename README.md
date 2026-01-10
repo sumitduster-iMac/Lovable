@@ -70,11 +70,11 @@
 ## 🖼️ Application Window
 
 The app provides a clean, minimal interface:
-- **Instant Launch**: Opens directly to lovable.dev without delays
+- **Instant Launch**: Opens directly to lovable.dev
 - **Full-Featured Webview**: Complete access to all Lovable platform features
 - **Seamless Integration**: Native macOS window controls and behavior
-- **Persistent Sessions**: Your work is automatically saved across app launches
-- **Clean Interface**: No unnecessary chrome, just the tools you need
+- **Persistent Sessions**: Your login and work sessions persist between app launches
+- **Clean Interface**: Full-screen webview with no extra chrome
 
 ---
 
@@ -135,7 +135,7 @@ npm start
 The app will:
 1. Generate required icons from SVG source
 2. Launch the Electron application
-3. Open lovable.dev instantly in the webview
+3. Load lovable.dev in a full-screen webview
 
 ---
 
@@ -225,11 +225,11 @@ The app provides a premium desktop experience with a focus on performance and us
 
 ### Design Philosophy
 1. **Instant Startup** - Opens directly to lovable.dev for immediate productivity
-2. **Clean Interface** - Minimal chrome and distractions, maximum workspace
+2. **Minimal Interface** - Full-screen webview with no distractions
 3. **Beautiful Icon** - Tahoe-style liquid glass heart with gradient design
-4. **Native Feel** - Seamless macOS integration with system fonts and controls
+4. **Native Feel** - Seamless macOS integration with native window controls
 5. **Performance First** - Optimized for fast, responsive interaction
-6. **Persistent State** - Work is automatically saved across sessions
+6. **Persistent Sessions** - Login and work sessions persist between launches
 
 ### App Icon Design
 

@@ -12,68 +12,60 @@
 
     <!-- Soft shadow filter -->
     <filter id="dropShadow" x="-30%" y="-20%" width="160%" height="160%">
-      <feDropShadow dx="4" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.22"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.22"/>
     </filter>
 
-    <!-- Heart path for clipping -->
+    <!-- Heart path for clipping - centered -->
     <clipPath id="heartClip">
-      <path d="M256 460
-        C206 430 150 385 110 335
-        C70 285 50 230 50 175
-        C50 100 110 50 185 50
-        C230 50 270 75 295 115
-        C320 75 360 50 405 50
-        C480 50 540 100 540 175
-        C540 230 520 285 480 335
-        C440 385 384 430 334 460
-        C310 475 280 490 256 500
-        C232 490 202 475 256 460 Z"
-        transform="translate(-35, 5) scale(0.92)"/>
+      <path d="M256 440
+        C210 412 158 370 120 322
+        C82 274 64 222 64 168
+        C64 98 120 52 190 52
+        C232 52 270 76 294 114
+        C318 76 356 52 398 52
+        C468 52 524 98 524 168
+        C524 222 506 274 468 322
+        C430 370 378 412 332 440
+        C310 454 282 468 256 478
+        C230 468 202 454 256 440 Z"/>
     </clipPath>
   </defs>
   
-  <!-- Main group with shadow -->
+  <!-- Main group with shadow - centered -->
   <g filter="url(#dropShadow)">
-    <!-- Heart shape with gradient -->
-    <path id="heartShape" d="M256 460
-      C206 430 150 385 110 335
-      C70 285 50 230 50 175
-      C50 100 110 50 185 50
-      C230 50 270 75 295 115
-      C320 75 360 50 405 50
-      C480 50 540 100 540 175
-      C540 230 520 285 480 335
-      C440 385 384 430 334 460
-      C310 475 280 490 256 500
-      C232 490 202 475 256 460 Z"
-      fill="url(#heartGradient)"
-      transform="translate(-35, 5) scale(0.92)"/>
+    <!-- Heart shape with gradient - centered in 512x512 -->
+    <path id="heartShape" d="M256 440
+      C210 412 158 370 120 322
+      C82 274 64 222 64 168
+      C64 98 120 52 190 52
+      C232 52 270 76 294 114
+      C318 76 356 52 398 52
+      C468 52 524 98 524 168
+      C524 222 506 274 468 322
+      C430 370 378 412 332 440
+      C310 454 282 468 256 478
+      C230 468 202 454 256 440 Z"
+      fill="url(#heartGradient)"/>
 
     <!-- Wave lines clipped to heart shape -->
     <g clip-path="url(#heartClip)">
       <!-- First wave (top) -->
-      <path d="M0 200
-        Q100 160 200 210
-        Q300 260 400 200
-        Q480 155 550 180"
-        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.92"
-        transform="translate(-35, 5) scale(0.92)"/>
+      <path d="M40 195
+        Q150 155 256 205
+        Q362 255 472 195"
+        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.92"/>
       
       <!-- Second wave (middle) -->
-      <path d="M0 275
-        Q100 230 200 285
-        Q300 340 400 275
-        Q480 225 550 255"
-        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.92"
-        transform="translate(-35, 5) scale(0.92)"/>
+      <path d="M40 270
+        Q150 225 256 280
+        Q362 335 472 270"
+        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.92"/>
       
       <!-- Third wave (bottom) -->
-      <path d="M0 355
-        Q100 305 200 360
-        Q300 415 400 355
-        Q480 305 550 335"
-        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.92"
-        transform="translate(-35, 5) scale(0.92)"/>
+      <path d="M40 345
+        Q150 300 256 355
+        Q362 410 472 345"
+        fill="none" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.92"/>
     </g>
   </g>
 </svg>
